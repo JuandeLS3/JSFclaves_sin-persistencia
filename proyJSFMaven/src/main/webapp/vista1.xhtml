@@ -18,10 +18,12 @@
 <h:commandButton value="add" action="#{obj.add}" />
 </p>
 <p>
-<h:commandButton value="add" action="#{obj.add}" />
+<h:commandButton value="mostrar datos" action="#{obj.mostrar}" />
 </p>
 </h:form>
-<h:panelGroup layout="block" id="container" rendered="#{obj.good}">
+
+<!-- Si isgood = true es que ha entrado en mostrar, entonces mostrará los datos. -->
+<h:panelGroup layout="block" id="container" rendered="#{viewManager.good}">
  <h:outputText value="#{obj.last}" /> 
  <hr />
  <h:dataTable value="#{obj.listClaves}" var="item">

@@ -63,11 +63,11 @@ public class ViewManager implements Serializable{
     System.out.println("=" + this.key + "=" + this.value + "=");
     if (!datos.containsKey(this.key)) { // Si el hash no contiene dicha key...
       datos.put(this.key, this.value);
-      this.last=this.key;
-      this.good=true;
+      this.last = this.key;
+      this.good = true;
     }
     else {
-      this.good=false;
+      this.good = false;
     }
     this.setKey("");
     this.setValue("");
@@ -79,11 +79,11 @@ public class ViewManager implements Serializable{
     listClaves = new ArrayList<Elemento>();
     for(Map.Entry<String,String> entry : datos.entrySet()) {
       listClaves.add(new Elemento(entry.getKey(),entry.getValue()));
-      this.good=true;
+      this.good = true;
     }
   } else {
     listClaves = new ArrayList<Elemento>();
-    this.good=false;
+    this.good = false;
     }
   }
 }
