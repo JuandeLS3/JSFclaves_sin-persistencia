@@ -7,5 +7,5 @@ Proyecto JSF con campos key-value sin persistencia.
 
 # Instalación
 - Hacer git clone del proyecto
-- Iniciar el servidor con **mvn jetty:run**
+- Iniciar el servidor con **mvn clean install jetty:run**
 - Iniciar navegador con localhost:9999 para lanzar la aplicación
