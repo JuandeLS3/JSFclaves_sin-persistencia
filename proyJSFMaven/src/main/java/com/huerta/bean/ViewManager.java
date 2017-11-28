@@ -34,7 +34,6 @@ public class ViewManager implements Serializable{
     for(Map.Entry<String,String> entry : datos.entrySet()) {
       listClaves.add(new Elemento(entry.getKey(),entry.getValue()));
     }*/
-	
     return listClaves;
   }
 
@@ -43,7 +42,6 @@ public class ViewManager implements Serializable{
   }
 
   public Map<String,String> datos() {
-    
     return datos;
   }
 
@@ -60,20 +58,16 @@ public class ViewManager implements Serializable{
   public String getValue() {
     return value;
   }
-
+/*
   public void setLast(String last) {
     this.last = last;
   }
-
-  public void setValue(String value) {
-    this.value = value;
-  }
-  
+*/
   public void add() {
     System.out.println("=" + this.key + "=" + this.value + "=");
     if (!datos.containsKey(this.key)) { // Si el hash no contiene dicha key...
       datos.put(this.key, this.value);
-      this.last = "Introducido";
+      this.last = "Key introducida";
       //this.good = true;
       System.out.println("Introducido --> "+datos);
     } else {
