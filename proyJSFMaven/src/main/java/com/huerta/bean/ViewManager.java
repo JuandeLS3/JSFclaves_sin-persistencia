@@ -16,8 +16,7 @@ public class ViewManager implements Serializable{
   private String value;
   private String last;
   private boolean good;
-  private List<Elemento> listClaves;
-  private Set<String> set;
+  private List<Elemento> listClaves = new ArrayList<Elemento>();
   private Map<String, String> datos;
 
   public ViewManager() {
@@ -25,18 +24,29 @@ public class ViewManager implements Serializable{
      //set = new HashSet<String>();
      datos = new HashMap<String, String>();
   }
+
   public String getLast() {
     return last;
   }
   public List<Elemento> getListClaves() {
-   /* listClaves = new ArrayList<Elemento>();
-    Map<String,String> hash_tarea2 = jedis.hgetAll("nombres1H");
-    for(Map.Entry<String,String> entry : hash_tarea2.entrySet()) {
+    /*listClaves = new ArrayList<Elemento>();
+    datos = new Elemento(entry.getKey(),entry.getValue());
+    for(Map.Entry<String,String> entry : datos.entrySet()) {
       listClaves.add(new Elemento(entry.getKey(),entry.getValue()));
     }*/
 	
     return listClaves;
   }
+
+  public void setListClaves(List<Elemento> listClaves) {
+    this.listClaves = listClaves;
+  }
+
+  public Map<String,String> datos() {
+    
+    return datos;
+  }
+
   public String getKey() {
     return key;
   }
@@ -59,19 +69,20 @@ public class ViewManager implements Serializable{
     this.value = value;
   }
   
-  public String add() {
+  public void add() {
     System.out.println("=" + this.key + "=" + this.value + "=");
     if (!datos.containsKey(this.key)) { // Si el hash no contiene dicha key...
       datos.put(this.key, this.value);
-      this.last = this.key;
-      this.good = true;
+      this.last = "Introducido";
+      //this.good = true;
+      System.out.println("Introducido --> "+datos);
+    } else {
+      this.last = "Clave repetida";
+      System.out.println("Clave repetida");
     }
-    else {
-      this.good = false;
-    }
-    this.setKey("");
+    /*this.setKey("");
     this.setValue("");
-    return null;
+    return null;*/
   }
 
   public void mostrar() {
@@ -79,6 +90,7 @@ public class ViewManager implements Serializable{
     listClaves = new ArrayList<Elemento>();
     for(Map.Entry<String,String> entry : datos.entrySet()) {
       listClaves.add(new Elemento(entry.getKey(),entry.getValue()));
+      System.out.println("Mostrar: "+entry.getKey() + " ---- " + entry.getValue());
       this.good = true;
     }
   } else {

@@ -15,24 +15,19 @@
 <h:inputText value="#{obj.value}" />
 </p>
 <p>
-<h:commandButton value="add" action="#{obj.add}" />
-</p>
-<p>
-<h:commandButton value="mostrar datos" action="#{obj.mostrar}" />
+<h:commandButton value="Añadir" action="#{obj.add}" />
+<h:commandButton value="Mostrar" action="#{obj.mostrar}"/>
+<h:outputText value="#{obj.last}" /> 
 </p>
 </h:form>
 
-<!-- Si isgood = true es que ha entrado en mostrar, entonces mostrará los datos. -->
-<h:panelGroup layout="block" id="container" rendered="#{viewManager.good}">
+<h:panelGroup layout="block" id="container">
  <h:outputText value="#{obj.last}" /> 
  <hr />
  <h:dataTable value="#{obj.listClaves}" var="item">
   <h:column>
-    #{obj.listClaves.indexOf(item)}
-  </h:column>
-  <h:column>
-   <h:outputText value="#{item.key}" rendered="#{item.key ne obj.last}" />
-   <b><i><h:outputText value="#{item.key}" rendered="#{item.key eq obj.last}" /></i></b>
+   <h:outputText value="#{item.key}" /> - 
+   
   </h:column>
   <h:column>
    <h:outputText value="#{item.value}" />
