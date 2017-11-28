@@ -2,7 +2,6 @@
 Proyecto JSF con campos key-value sin persistencia.
 
 # Requisitos
-- Servidor web, como por ejemplo Apache2
 - Cliente web (navegador)
 - Maven para la ejecucción del proyecto y dependencias
 
