@@ -58,6 +58,10 @@ public class ViewManager implements Serializable{
   public String getValue() {
     return value;
   }
+
+  public void setValue(String value) {
+    this.value = value;
+  }
 /*
   public void setLast(String last) {
     this.last = last;
@@ -67,16 +71,13 @@ public class ViewManager implements Serializable{
     System.out.println("=" + this.key + "=" + this.value + "=");
     if (!datos.containsKey(this.key)) { // Si el hash no contiene dicha key...
       datos.put(this.key, this.value);
-      this.last = "Key introducida";
       //this.good = true;
       System.out.println("Introducido --> "+datos);
     } else {
       this.last = "Clave repetida";
-      System.out.println("Clave repetida");
     }
-    /*this.setKey("");
-    this.setValue("");
-    return null;*/
+	this.setKey("");
+	this.setValue("");
   }
 
   public void mostrar() {
